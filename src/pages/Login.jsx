@@ -33,21 +33,22 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-sky-900 to-cyan-900">
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-950">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-sky-400/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute top-40 right-40 w-64 h-64 bg-teal-400/15 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-20 w-96 h-96 bg-secondary-600/30 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-secondary-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary-700/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-40 right-40 w-80 h-80 bg-accent-500/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-xl w-full max-w-md p-10 relative z-10 border border-white/30 animate-scale-in">
+      <div className="bg-white/98 backdrop-blur-xl rounded-3xl shadow-brand w-full max-w-md p-10 relative z-10 border-2 border-primary-200/30 animate-scale-in">
         <div className="text-center mb-8">
           <div className="mb-6 flex justify-center animate-slide-in-up">
             <img src="https://rowad-rme.com/wp-content/uploads/Rowad-Logo.png" width="300" alt="Rowad Logo" className="mx-auto" />
           </div>
-          <p className="text-gray-700 font-semibold text-lg">Sign in to your account</p>
+          <p className="text-primary-800 font-bold text-xl">Sign in to your account</p>
+          <div className="w-20 h-1 bg-gradient-brand mx-auto mt-3 rounded-full"></div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -108,7 +109,7 @@ const Login = () => {
                 setEmail('admin@crm.com');
                 setPassword('admin123');
               }}
-              className="px-5 py-3 bg-gradient-to-r from-danger-50 to-orange-50 text-danger-700 rounded-xl text-sm font-bold hover:from-danger-100 hover:to-orange-100 transition-all duration-300 border-2 border-danger-200/60 shadow-sm hover:shadow-soft transform hover:scale-[1.02]"
+              className="px-5 py-3 bg-gradient-to-r from-secondary-50 to-secondary-100 text-secondary-800 rounded-xl text-sm font-bold hover:from-secondary-100 hover:to-secondary-200 transition-all duration-300 border-2 border-secondary-300/60 shadow-sm hover:shadow-glow-red transform hover:scale-[1.02]"
             >
               Admin Account
             </button>
@@ -118,7 +119,7 @@ const Login = () => {
                 setEmail('clevel@crm.com');
                 setPassword('clevel123');
               }}
-              className="px-5 py-3 bg-gradient-to-r from-primary-50 to-sky-50 text-primary-700 rounded-xl text-sm font-bold hover:from-primary-100 hover:to-sky-100 transition-all duration-300 border-2 border-primary-200/60 shadow-sm hover:shadow-soft transform hover:scale-[1.02]"
+              className="px-5 py-3 bg-gradient-to-r from-primary-50 to-primary-100 text-primary-800 rounded-xl text-sm font-bold hover:from-primary-100 hover:to-primary-200 transition-all duration-300 border-2 border-primary-300/60 shadow-sm hover:shadow-glow transform hover:scale-[1.02]"
             >
               C-Level Executive
             </button>
@@ -128,7 +129,7 @@ const Login = () => {
                 setEmail('dev@crm.com');
                 setPassword('dev123');
               }}
-              className="px-5 py-3 bg-gradient-to-r from-secondary-50 to-teal-50 text-secondary-700 rounded-xl text-sm font-bold hover:from-secondary-100 hover:to-teal-100 transition-all duration-300 border-2 border-secondary-200/60 shadow-sm hover:shadow-soft transform hover:scale-[1.02]"
+              className="px-5 py-3 bg-gradient-to-r from-accent-50 to-accent-100 text-accent-800 rounded-xl text-sm font-bold hover:from-accent-100 hover:to-accent-200 transition-all duration-300 border-2 border-accent-300/60 shadow-sm hover:shadow-glow-accent transform hover:scale-[1.02]"
             >
               Project Developer
             </button>

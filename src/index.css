@@ -112,7 +112,7 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-slate-50 via-sky-50/40 to-cyan-50/40 text-gray-900;
+    @apply bg-gradient-to-br from-slate-50 via-primary-50/30 to-secondary-50/20 text-gray-900;
     background-attachment: fixed;
     font-feature-settings: 'cv11', 'ss01';
     -webkit-font-smoothing: antialiased;
@@ -214,14 +214,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #0ea5e9, #0284c7);
+  background: linear-gradient(to bottom, #2A415E, #B41736);
   border-radius: 10px;
   border: 2px solid #f8fafc;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #0284c7, #0369a1);
+  background: linear-gradient(to bottom, #1a2734, #90122b);
 }
 
 /* Loading animation */

@@ -70,11 +70,11 @@ const Home = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <Link
           to="/projects/create"
-          className="card hover:shadow-xl transition-all cursor-pointer group border-2 border-transparent hover:border-primary-200 animate-slide-in-up"
+          className="card hover:shadow-brand transition-all cursor-pointer group border-2 border-transparent hover:border-primary-300 animate-slide-in-up"
           style={{ animationDelay: '0.1s' }}
         >
           <div className="flex items-center space-x-4">
-            <div className="bg-gradient-to-br from-primary-500 to-primary-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-3">
+            <div className="bg-gradient-primary p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-3">
               <Plus size={26} className="text-white" />
             </div>
             <div>
@@ -86,11 +86,11 @@ const Home = () => {
 
         <Link
           to="/activities"
-          className="card hover:shadow-xl transition-all cursor-pointer group border-2 border-transparent hover:border-secondary-200 animate-slide-in-up"
+          className="card hover:shadow-brand transition-all cursor-pointer group border-2 border-transparent hover:border-secondary-300 animate-slide-in-up"
           style={{ animationDelay: '0.2s' }}
         >
           <div className="flex items-center space-x-4">
-            <div className="bg-gradient-to-br from-secondary-500 to-secondary-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow-teal transition-all transform group-hover:scale-110 group-hover:rotate-3">
+            <div className="bg-gradient-secondary p-4 rounded-2xl shadow-soft group-hover:shadow-glow-red transition-all transform group-hover:scale-110 group-hover:rotate-3">
               <TrendingUp size={26} className="text-white" />
             </div>
             <div>
@@ -102,15 +102,15 @@ const Home = () => {
 
         <Link
           to="/clients/create"
-          className="card hover:shadow-xl transition-all cursor-pointer group border-2 border-transparent hover:border-success-200 animate-slide-in-up"
+          className="card hover:shadow-brand transition-all cursor-pointer group border-2 border-transparent hover:border-accent-300 animate-slide-in-up"
           style={{ animationDelay: '0.3s' }}
         >
           <div className="flex items-center space-x-4">
-            <div className="bg-gradient-to-br from-success-500 to-success-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow-green transition-all transform group-hover:scale-110 group-hover:rotate-3">
+            <div className="bg-gradient-accent p-4 rounded-2xl shadow-soft group-hover:shadow-glow-accent transition-all transform group-hover:scale-110 group-hover:rotate-3">
               <Plus size={26} className="text-white" />
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 text-lg group-hover:text-success-600 transition-colors">Add Client</h3>
+              <h3 className="font-bold text-gray-900 text-lg group-hover:text-accent-600 transition-colors">Add Client</h3>
               <p className="text-sm text-gray-600 font-medium">Manage relationships</p>
             </div>
           </div>
@@ -119,7 +119,7 @@ const Home = () => {
 
       {/* Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-success-200 animate-scale-in" style={{ animationDelay: '0.1s' }}>
+        <div className="card hover:shadow-brand group border-2 border-transparent hover:border-success-300 animate-scale-in" style={{ animationDelay: '0.1s' }}>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Total Pipeline</p>
@@ -137,15 +137,15 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-primary-200 animate-scale-in" style={{ animationDelay: '0.2s' }}>
+        <div className="card hover:shadow-brand group border-2 border-transparent hover:border-primary-300 animate-scale-in" style={{ animationDelay: '0.2s' }}>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Active Projects</p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mt-2">
+              <p className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mt-2">
                 {metrics?.activeProjects || 0}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-primary-500 to-primary-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-6">
+            <div className="bg-gradient-primary p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-6">
               <TrendingUp size={28} className="text-white" />
             </div>
           </div>
@@ -154,15 +154,15 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-warning-200 animate-scale-in" style={{ animationDelay: '0.3s' }}>
+        <div className="card hover:shadow-brand group border-2 border-transparent hover:border-secondary-300 animate-scale-in" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Pending</p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-warning-500 to-warning-600 bg-clip-text text-transparent mt-2">
+              <p className="text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent mt-2">
                 {metrics?.pendingGoDecisions || 0}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-warning-500 to-warning-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-6">
+            <div className="bg-gradient-secondary p-4 rounded-2xl shadow-soft group-hover:shadow-glow-red transition-all transform group-hover:scale-110 group-hover:rotate-6">
               <Clock size={28} className="text-white" />
             </div>
           </div>
@@ -171,15 +171,15 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-success-200 animate-scale-in" style={{ animationDelay: '0.4s' }}>
+        <div className="card hover:shadow-brand group border-2 border-transparent hover:border-accent-300 animate-scale-in" style={{ animationDelay: '0.4s' }}>
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Recent Wins</p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-success-500 to-success-600 bg-clip-text text-transparent mt-2">
+              <p className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent mt-2">
                 {metrics?.recentWins || 0}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-success-500 to-success-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow-green transition-all transform group-hover:scale-110 group-hover:rotate-6">
+            <div className="bg-gradient-accent p-4 rounded-2xl shadow-soft group-hover:shadow-glow-accent transition-all transform group-hover:scale-110 group-hover:rotate-6">
               <CheckCircle size={28} className="text-white" />
             </div>
           </div>

@@ -50,23 +50,23 @@ const Layout = () => {
   );
 
   return (
-    <div className="flex h-screen bg-gradient-to-br from-slate-50 via-sky-50/40 to-cyan-50/40">
+    <div className="flex h-screen bg-gradient-to-br from-slate-50 via-primary-50/30 to-secondary-50/20">
       {/* Sidebar */}
       <aside
         className={`${
           sidebarOpen ? 'w-64' : 'w-20'
-        } bg-white/95 backdrop-blur-xl border-r border-gray-200/60 shadow-xl transition-all duration-300 flex flex-col`}
+        } bg-gradient-to-b from-primary-900 to-primary-800 backdrop-blur-xl border-r border-primary-700/50 shadow-2xl transition-all duration-300 flex flex-col`}
       >
         {/* Logo */}
-        <div className="h-16 flex items-center justify-between px-4 border-b border-gray-200/60">
+        <div className="h-16 flex items-center justify-between px-4 border-b border-primary-700/50 bg-primary-950/30">
           {sidebarOpen && (
-            <img src="https://rowad-rme.com/wp-content/uploads/Rowad-Logo.png" width="150" alt="Rowad Logo" className="mx-auto transition-all duration-300" />
+            <img src="https://rowad-rme.com/wp-content/uploads/Rowad-Logo.png" width="150" alt="Rowad Logo" className="mx-auto transition-all duration-300 brightness-0 invert" />
           )}
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2.5 rounded-xl hover:bg-gradient-to-r hover:from-primary-50 hover:to-sky-50 transition-all duration-300 hover:shadow-soft transform hover:scale-105 active:scale-95"
+            className="p-2.5 rounded-xl bg-primary-800/50 hover:bg-gradient-to-r hover:from-secondary-600 hover:to-secondary-700 transition-all duration-300 hover:shadow-glow-red transform hover:scale-105 active:scale-95"
           >
-            {sidebarOpen ? <X size={20} className="text-gray-600" /> : <Menu size={20} className="text-gray-600" />}
+            {sidebarOpen ? <X size={20} className="text-white" /> : <Menu size={20} className="text-white" />}
           </button>
         </div>
 
@@ -81,11 +81,11 @@ const Layout = () => {
                 to={item.href}
                 className={`flex items-center px-3 py-3 rounded-xl transition-all duration-300 group ${
                   isActive
-                    ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-soft shadow-primary-500/30 font-semibold'
-                    : 'text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-sky-50 hover:text-primary-700 hover:shadow-sm'
+                    ? 'bg-gradient-to-r from-secondary-600 to-secondary-700 text-white shadow-lg shadow-secondary-500/40 font-semibold'
+                    : 'text-gray-300 hover:bg-primary-700/50 hover:text-white hover:shadow-soft'
                 }`}
               >
-                <Icon size={20} className={`${isActive ? 'text-white' : 'text-gray-500 group-hover:text-primary-600'} transition-colors duration-300`} />
+                <Icon size={20} className={`${isActive ? 'text-white' : 'text-gray-400 group-hover:text-white'} transition-colors duration-300`} />
                 {sidebarOpen && <span className="ml-3 font-medium">{item.name}</span>}
               </Link>
             );
@@ -93,32 +93,32 @@ const Layout = () => {
         </nav>
 
         {/* User Section */}
-        <div className="border-t border-gray-200/60 p-4">
+        <div className="border-t border-primary-700/50 p-4 bg-primary-950/30">
           {sidebarOpen ? (
             <div className="space-y-2">
               <div className="flex items-center space-x-3 px-3 py-2.5 mb-2">
-                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center text-white font-bold shadow-soft text-sm">
+                <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-secondary-600 to-secondary-700 rounded-xl flex items-center justify-center text-white font-bold shadow-glow-red text-sm">
                   {user?.firstName?.[0]}{user?.lastName?.[0]}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900 truncate">
+                  <p className="text-sm font-semibold text-white truncate">
                     {user?.firstName} {user?.lastName}
                   </p>
-                  <p className="text-xs text-gray-600 truncate font-medium">{user?.role}</p>
+                  <p className="text-xs text-gray-400 truncate font-medium">{user?.role}</p>
                 </div>
               </div>
               <Link
                 to="/settings"
-                className="flex items-center px-3 py-2.5 text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 rounded-xl transition-all duration-300 group hover:shadow-sm"
+                className="flex items-center px-3 py-2.5 text-gray-300 hover:bg-primary-700/50 hover:text-white rounded-xl transition-all duration-300 group hover:shadow-sm"
               >
-                <Settings size={18} className="text-gray-500 group-hover:text-primary-600 transition-colors" />
+                <Settings size={18} className="text-gray-400 group-hover:text-white transition-colors" />
                 <span className="ml-3 font-medium">Settings</span>
               </Link>
               <button
                 onClick={handleLogout}
-                className="w-full flex items-center px-3 py-2.5 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-rose-50 rounded-xl transition-all duration-300 group hover:shadow-sm"
+                className="w-full flex items-center px-3 py-2.5 text-gray-300 hover:bg-secondary-600/30 hover:text-white rounded-xl transition-all duration-300 group hover:shadow-sm"
               >
-                <LogOut size={18} className="text-gray-500 group-hover:text-danger-600 transition-colors" />
+                <LogOut size={18} className="text-gray-400 group-hover:text-white transition-colors" />
                 <span className="ml-3 font-medium">Logout</span>
               </button>
             </div>
@@ -126,13 +126,13 @@ const Layout = () => {
             <div className="space-y-2">
               <Link
                 to="/settings"
-                className="flex items-center justify-center p-2.5 text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-slate-50 rounded-xl transition-all duration-300 hover:shadow-sm transform hover:scale-105"
+                className="flex items-center justify-center p-2.5 text-gray-300 hover:bg-primary-700/50 hover:text-white rounded-xl transition-all duration-300 hover:shadow-sm transform hover:scale-105"
               >
                 <Settings size={20} />
               </Link>
               <button
                 onClick={handleLogout}
-                className="w-full flex items-center justify-center p-2.5 text-gray-700 hover:bg-gradient-to-r hover:from-red-50 hover:to-rose-50 rounded-xl transition-all duration-300 hover:shadow-sm transform hover:scale-105"
+                className="w-full flex items-center justify-center p-2.5 text-gray-300 hover:bg-secondary-600/30 hover:text-white rounded-xl transition-all duration-300 hover:shadow-sm transform hover:scale-105"
               >
                 <LogOut size={20} />
               </button>
@@ -144,11 +144,11 @@ const Layout = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="h-16 bg-white/90 backdrop-blur-xl border-b border-gray-200/60 shadow-sm flex items-center justify-between px-6">
+        <header className="h-16 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-soft flex items-center justify-between px-6">
           <div className="flex items-center space-x-4 flex-1">
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center space-x-3 px-5 py-2.5 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-400 hover:shadow-soft transition-all duration-300 group"
+              className="flex items-center space-x-3 px-5 py-2.5 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-600 hover:shadow-brand transition-all duration-300 group"
             >
               <Search size={18} className="text-gray-500 group-hover:text-primary-600 transition-colors" />
               <span className="text-gray-600 font-medium">Search...</span>
@@ -157,13 +157,13 @@ const Layout = () => {
           </div>
 
           <div className="flex items-center space-x-3">
-            <button className="relative p-2.5 text-gray-600 hover:bg-gradient-to-r hover:from-primary-50 hover:to-sky-50 rounded-xl transition-all duration-300 hover:shadow-soft transform hover:scale-105">
+            <button className="relative p-2.5 text-gray-600 hover:bg-gradient-to-r hover:from-secondary-50 hover:to-secondary-100 hover:text-secondary-700 rounded-xl transition-all duration-300 hover:shadow-soft transform hover:scale-105">
               <Bell size={20} />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-gradient-to-r from-danger-500 to-rose-500 rounded-full animate-pulse-slow shadow-sm"></span>
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-gradient-to-r from-secondary-600 to-secondary-700 rounded-full animate-pulse-slow shadow-sm"></span>
             </button>
 
             {isCLevel() && (
-              <span className="px-4 py-1.5 bg-gradient-to-r from-primary-100 to-sky-100 text-primary-800 text-xs font-bold rounded-full shadow-sm border border-primary-200/60">
+              <span className="px-4 py-1.5 bg-gradient-brand text-white text-xs font-bold rounded-full shadow-brand">
                 C-Level
               </span>
             )}
