@@ -222,21 +222,21 @@ const ProjectLifecycle = () => {
   }
 
   return (
-    <div className="p-6 max-w-7xl mx-auto bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <div className="p-8 max-w-7xl mx-auto min-h-screen">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-10 animate-slide-in-up">
         <div>
-          <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">Projects</h1>
-          <p className="text-gray-600 mt-2">Track and manage all your projects</p>
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Projects</h1>
+          <p className="text-gray-600 mt-2 text-lg font-medium">Track and manage all your projects</p>
         </div>
-        <Link to="/projects/create" className="px-6 py-3 bg-gradient-primary text-white rounded-lg hover:shadow-glow transition-all duration-300 flex items-center space-x-2 font-semibold">
-          <Plus size={20} />
+        <Link to="/projects/create" className="px-6 py-3.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl hover:shadow-glow transition-all duration-300 flex items-center space-x-2 font-bold hover:scale-105 transform">
+          <Plus size={22} />
           <span>Add Project</span>
         </Link>
       </div>
 
       {/* Filters */}
-      <div className="bg-white/95 backdrop-blur-lg rounded-xl shadow-medium border border-gray-200/50 p-6 mb-8">
+      <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-soft border-2 border-gray-200/60 p-6 mb-8 animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
@@ -324,9 +324,9 @@ const ProjectLifecycle = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className="bg-white/95 backdrop-blur-lg rounded-xl shadow-medium hover:shadow-large border border-gray-200/50 p-6 transition-all duration-300 relative animate-slide-in-up hover:-translate-y-1"
+            <div
+              key={project.id}
+              className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-soft hover:shadow-xl border-2 border-gray-200/60 hover:border-primary-200 p-6 transition-all duration-300 relative animate-slide-in-up hover:-translate-y-2 group"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {/* Edit Button */}
@@ -427,19 +427,25 @@ const ProjectLifecycle = () => {
       )}
 
       {/* Summary Stats */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
         {stages.slice(0, 4).map((stage, idx) => {
           const count = projects.filter(p => p.stage === stage).length;
           const gradients = [
-            'from-blue-500 to-indigo-600',
-            'from-purple-500 to-pink-600',
-            'from-emerald-500 to-teal-600',
-            'from-orange-500 to-red-600'
+            'from-primary-500 to-primary-600',
+            'from-secondary-500 to-secondary-600',
+            'from-success-500 to-success-600',
+            'from-warning-500 to-warning-600'
+          ];
+          const bgGradients = [
+            'from-primary-50 to-sky-50',
+            'from-secondary-50 to-teal-50',
+            'from-success-50 to-green-50',
+            'from-warning-50 to-yellow-50'
           ];
           return (
-            <div key={stage} className="bg-white/95 backdrop-blur-lg rounded-xl shadow-medium border border-gray-200/50 p-6 text-center hover:shadow-large transition-all duration-300">
-              <p className={`text-4xl font-bold bg-gradient-to-r ${gradients[idx]} bg-clip-text text-transparent`}>{count}</p>
-              <p className="text-sm text-gray-600 mt-2 font-medium">{stageLabels[stage]}</p>
+            <div key={stage} className={`bg-gradient-to-br ${bgGradients[idx]} backdrop-blur-xl rounded-2xl shadow-soft border-2 border-gray-200/60 p-6 text-center hover:shadow-medium transition-all duration-300 transform hover:scale-105 animate-bounce-in`} style={{ animationDelay: `${idx * 100}ms` }}>
+              <p className={`text-5xl font-bold bg-gradient-to-r ${gradients[idx]} bg-clip-text text-transparent`}>{count}</p>
+              <p className="text-sm text-gray-700 mt-3 font-bold uppercase tracking-wide">{stageLabels[stage]}</p>
             </div>
           );
         })}

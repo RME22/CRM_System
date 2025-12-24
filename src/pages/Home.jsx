@@ -55,132 +55,135 @@ const Home = () => {
   }
 
   return (
-    <div className="p-6 max-w-7xl mx-auto">
+    <div className="p-8 max-w-7xl mx-auto">
       {/* Welcome Section */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">
+      <div className="mb-10 animate-slide-in-up">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">
           Welcome back, {user?.firstName}!
         </h1>
-        <p className="text-gray-600 mt-1">
+        <p className="text-gray-600 text-lg font-medium">
           Here's what's happening with your business development today.
         </p>
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <Link
           to="/projects/create"
-          className="card hover:shadow-lg transition-all cursor-pointer group"
+          className="card hover:shadow-xl transition-all cursor-pointer group border-2 border-transparent hover:border-primary-200 animate-slide-in-up"
+          style={{ animationDelay: '0.1s' }}
         >
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-primary-100 to-primary-200 p-3 rounded-xl shadow-sm group-hover:shadow-md transition-all">
-              <Plus size={24} className="text-primary-600 group-hover:scale-110 transition-transform" />
+          <div className="flex items-center space-x-4">
+            <div className="bg-gradient-to-br from-primary-500 to-primary-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-3">
+              <Plus size={26} className="text-white" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Add Project</h3>
-              <p className="text-sm text-gray-600">Create project opportunity</p>
+              <h3 className="font-bold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Add Project</h3>
+              <p className="text-sm text-gray-600 font-medium">Create new opportunity</p>
             </div>
           </div>
         </Link>
 
         <Link
           to="/activities"
-          className="card hover:shadow-lg transition-all cursor-pointer group"
+          className="card hover:shadow-xl transition-all cursor-pointer group border-2 border-transparent hover:border-secondary-200 animate-slide-in-up"
+          style={{ animationDelay: '0.2s' }}
         >
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-secondary-100 to-secondary-200 p-3 rounded-xl shadow-sm group-hover:shadow-md transition-all">
-              <TrendingUp size={24} className="text-secondary-600 group-hover:scale-110 transition-transform" />
+          <div className="flex items-center space-x-4">
+            <div className="bg-gradient-to-br from-secondary-500 to-secondary-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow-teal transition-all transform group-hover:scale-110 group-hover:rotate-3">
+              <TrendingUp size={26} className="text-white" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Active Activities</h3>
-              <p className="text-sm text-gray-600">{metrics?.activePursuits || 0} in progress</p>
+              <h3 className="font-bold text-gray-900 text-lg group-hover:text-secondary-600 transition-colors">Active Activities</h3>
+              <p className="text-sm text-gray-600 font-medium">{metrics?.activePursuits || 0} in progress</p>
             </div>
           </div>
         </Link>
 
         <Link
           to="/clients/create"
-          className="card hover:shadow-lg transition-all cursor-pointer group"
+          className="card hover:shadow-xl transition-all cursor-pointer group border-2 border-transparent hover:border-success-200 animate-slide-in-up"
+          style={{ animationDelay: '0.3s' }}
         >
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-success-100 to-success-200 p-3 rounded-xl shadow-sm group-hover:shadow-md transition-all">
-              <Plus size={24} className="text-success-600 group-hover:scale-110 transition-transform" />
+          <div className="flex items-center space-x-4">
+            <div className="bg-gradient-to-br from-success-500 to-success-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow-green transition-all transform group-hover:scale-110 group-hover:rotate-3">
+              <Plus size={26} className="text-white" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900">Add Client</h3>
-              <p className="text-sm text-gray-600">Manage relationships</p>
+              <h3 className="font-bold text-gray-900 text-lg group-hover:text-success-600 transition-colors">Add Client</h3>
+              <p className="text-sm text-gray-600 font-medium">Manage relationships</p>
             </div>
           </div>
         </Link>
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="card hover:shadow-lg group">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-success-200 animate-scale-in" style={{ animationDelay: '0.1s' }}>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Total Pipeline</p>
-              <p className="text-2xl font-bold bg-gradient-to-r from-success-600 to-success-700 bg-clip-text text-transparent mt-1">
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Total Pipeline</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-success-500 to-success-600 bg-clip-text text-transparent mt-2">
                 ${(metrics?.totalPipelineValue || 0).toLocaleString()}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-success-100 to-success-200 p-3 rounded-xl shadow-sm group-hover:shadow-md transition-all">
-              <DollarSign size={24} className="text-success-600" />
+            <div className="bg-gradient-to-br from-success-500 to-success-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow-green transition-all transform group-hover:scale-110 group-hover:rotate-6">
+              <DollarSign size={28} className="text-white" />
             </div>
           </div>
-          <div className="mt-4 flex items-center text-sm">
-            <TrendingUp size={16} className="text-success-600 mr-1" />
-            <span className="text-success-600 font-semibold">Active projects</span>
+          <div className="mt-5 flex items-center text-sm pt-4 border-t border-gray-100">
+            <TrendingUp size={18} className="text-success-600 mr-2" />
+            <span className="text-success-600 font-bold">Active projects</span>
           </div>
         </div>
 
-        <div className="card hover:shadow-lg group">
+        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-primary-200 animate-scale-in" style={{ animationDelay: '0.2s' }}>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Active Projects</p>
-              <p className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mt-1">
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Active Projects</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mt-2">
                 {metrics?.activeProjects || 0}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-primary-100 to-primary-200 p-3 rounded-xl shadow-sm group-hover:shadow-md transition-all">
-              <TrendingUp size={24} className="text-primary-600" />
+            <div className="bg-gradient-to-br from-primary-500 to-primary-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-6">
+              <TrendingUp size={28} className="text-white" />
             </div>
           </div>
-          <div className="mt-4 text-sm text-gray-600 font-medium">
+          <div className="mt-5 text-sm text-gray-700 font-semibold pt-4 border-t border-gray-100">
             {metrics?.totalProjects || 0} total projects
           </div>
         </div>
 
-        <div className="card hover:shadow-lg group">
+        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-warning-200 animate-scale-in" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Pending Decisions</p>
-              <p className="text-2xl font-bold bg-gradient-to-r from-warning-600 to-warning-700 bg-clip-text text-transparent mt-1">
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Pending</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-warning-500 to-warning-600 bg-clip-text text-transparent mt-2">
                 {metrics?.pendingGoDecisions || 0}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-warning-100 to-warning-200 p-3 rounded-xl shadow-sm group-hover:shadow-md transition-all">
-              <Clock size={24} className="text-warning-600" />
+            <div className="bg-gradient-to-br from-warning-500 to-warning-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow transition-all transform group-hover:scale-110 group-hover:rotate-6">
+              <Clock size={28} className="text-white" />
             </div>
           </div>
-          <div className="mt-4 text-sm text-gray-600 font-medium">
-            Awaiting Go/No-Go review
+          <div className="mt-5 text-sm text-gray-700 font-semibold pt-4 border-t border-gray-100">
+            Awaiting review
           </div>
         </div>
 
-        <div className="card hover:shadow-lg group">
+        <div className="card hover:shadow-xl group border-2 border-transparent hover:border-success-200 animate-scale-in" style={{ animationDelay: '0.4s' }}>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">Recent Wins</p>
-              <p className="text-2xl font-bold bg-gradient-to-r from-success-600 to-success-700 bg-clip-text text-transparent mt-1">
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Recent Wins</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-success-500 to-success-600 bg-clip-text text-transparent mt-2">
                 {metrics?.recentWins || 0}
               </p>
             </div>
-            <div className="bg-gradient-to-br from-success-100 to-success-200 p-3 rounded-xl shadow-sm group-hover:shadow-md transition-all">
-              <CheckCircle size={24} className="text-success-600" />
+            <div className="bg-gradient-to-br from-success-500 to-success-600 p-4 rounded-2xl shadow-soft group-hover:shadow-glow-green transition-all transform group-hover:scale-110 group-hover:rotate-6">
+              <CheckCircle size={28} className="text-white" />
             </div>
           </div>
-          <div className="mt-4 text-sm text-gray-600 font-medium">
+          <div className="mt-5 text-sm text-gray-700 font-semibold pt-4 border-t border-gray-100">
             Last 30 days
           </div>
         </div>

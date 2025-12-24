@@ -33,21 +33,21 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden" style={{ backgroundColor: '#2a415e' }}>
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-sky-900 to-cyan-900">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-sky-400/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-40 right-40 w-64 h-64 bg-teal-400/15 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-large w-full max-w-md p-8 relative z-10 border border-white/20">
+      <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-xl w-full max-w-md p-10 relative z-10 border border-white/30 animate-scale-in">
         <div className="text-center mb-8">
-          <div className="mb-4 flex justify-center">
-            {/* <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent mb-2">RME CRM</h1> */}
+          <div className="mb-6 flex justify-center animate-slide-in-up">
             <img src="https://rowad-rme.com/wp-content/uploads/Rowad-Logo.png" width="300" alt="Rowad Logo" className="mx-auto" />
           </div>
-          <p className="text-gray-600 font-medium">Sign in to your account</p>
+          <p className="text-gray-700 font-semibold text-lg">Sign in to your account</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -78,7 +78,7 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full btn btn-primary flex items-center justify-center shadow-glow hover:shadow-glow-purple"
+            className="w-full btn btn-primary flex items-center justify-center text-base py-3 shadow-soft hover:shadow-glow"
           >
             {loading ? (
               <>
@@ -91,26 +91,26 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="mt-6">
+        <div className="mt-8">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300"></div>
+              <div className="w-full border-t-2 border-gray-200"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500 font-medium">Demo Credentials</span>
+              <span className="px-4 bg-white text-gray-600 font-semibold">Demo Credentials</span>
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 gap-3 mt-4">
+
+          <div className="grid grid-cols-1 gap-3 mt-5">
             <button
               type="button"
               onClick={() => {
                 setEmail('admin@crm.com');
                 setPassword('admin123');
               }}
-              className="px-4 py-2.5 bg-gradient-to-r from-red-50 to-orange-50 text-red-700 rounded-lg text-sm font-semibold hover:from-red-100 hover:to-orange-100 transition-all duration-200 border border-red-200/50 shadow-sm hover:shadow-md"
+              className="px-5 py-3 bg-gradient-to-r from-danger-50 to-orange-50 text-danger-700 rounded-xl text-sm font-bold hover:from-danger-100 hover:to-orange-100 transition-all duration-300 border-2 border-danger-200/60 shadow-sm hover:shadow-soft transform hover:scale-[1.02]"
             >
-              🔑 Admin Account
+              Admin Account
             </button>
             <button
               type="button"
@@ -118,9 +118,9 @@ const Login = () => {
                 setEmail('clevel@crm.com');
                 setPassword('clevel123');
               }}
-              className="px-4 py-2.5 bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 rounded-lg text-sm font-semibold hover:from-purple-100 hover:to-pink-100 transition-all duration-200 border border-purple-200/50 shadow-sm hover:shadow-md"
+              className="px-5 py-3 bg-gradient-to-r from-primary-50 to-sky-50 text-primary-700 rounded-xl text-sm font-bold hover:from-primary-100 hover:to-sky-100 transition-all duration-300 border-2 border-primary-200/60 shadow-sm hover:shadow-soft transform hover:scale-[1.02]"
             >
-              👔 C-Level Executive
+              C-Level Executive
             </button>
             <button
               type="button"
@@ -128,9 +128,9 @@ const Login = () => {
                 setEmail('dev@crm.com');
                 setPassword('dev123');
               }}
-              className="px-4 py-2.5 bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 rounded-lg text-sm font-semibold hover:from-blue-100 hover:to-cyan-100 transition-all duration-200 border border-blue-200/50 shadow-sm hover:shadow-md"
+              className="px-5 py-3 bg-gradient-to-r from-secondary-50 to-teal-50 text-secondary-700 rounded-xl text-sm font-bold hover:from-secondary-100 hover:to-teal-100 transition-all duration-300 border-2 border-secondary-200/60 shadow-sm hover:shadow-soft transform hover:scale-[1.02]"
             >
-              👨‍💻 Project Developer
+              Project Developer
             </button>
           </div>
         </div>
